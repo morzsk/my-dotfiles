@@ -12,7 +12,7 @@ in
     "${commonSystem}/os/bootloader.nix"
     "${commonSystem}/os/locale.nix"
     "${commonSystem}/os/networking.nix"
-    "${commonSystem}/os/printing.nix"
+    "${commonSystem}/os/printer.nix"
     "${commonSystem}/os/user.nix"
     "${commonSystem}/style/stylix.nix"
 	# "${commonSystem}/wm/gnome"
