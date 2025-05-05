@@ -6,10 +6,10 @@ in
 {
   imports = [
     "${commonUser}/app/cli/git"
-    "${commonUser}/app/cli/shell/bash"
-    "${commonUser}/app/cli/shell/zsh"
-    "${commonUser}/app/gui/browser/brave"
-    "${commonUser}/app/gui/terminal/blackbox"
+    "${commonUser}/app/cli/bash"
+    "${commonUser}/app/cli/zsh"
+    "${commonUser}/app/gui/brave"
+    "${commonUser}/app/gui/blackbox"
 	"${commonUser}/app/gui/obs"
     "${commonUser}/app/tui/nixvim"
     "${commonUser}/home-manager"
