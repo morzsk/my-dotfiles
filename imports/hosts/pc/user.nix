@@ -56,8 +56,8 @@ in
     	proton-pass            # Proton Pass: Password manager by Proton
     	protonvpn-gui          # ProtonVPN: GUI for ProtonVPN
     	ripgrep                # Ripgrep: A fast text search tool
-    	#rofi                   # Rofi: Application launcher and window switcher
-    	#seahorse               # Seahorse: GNOME keyring manager
+    	rofi                   # Rofi: Application launcher and window switcher
+    	seahorse               # Seahorse: GNOME keyring manager
 		slurp
     	#so                     # So: Lightweight audio file player
 		#steam                  # Steam: Gaming platform

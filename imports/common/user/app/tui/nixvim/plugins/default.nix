@@ -3,7 +3,7 @@
 {
   imports = [
 	./autoclose.nix
-		#./colorizer.nix
+	./colorizer.nix
 	./comment.nix
     ./friendly-snippets.nix
     ./gitsigns.nix
