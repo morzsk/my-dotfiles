@@ -16,10 +16,6 @@
         viAlias = true;
         vimAlias = true;
 
-		extraPlugins = with pkgs.vimPlugins; [
-			coc-nvim
-		];
-
         luaLoader.enable = true;
     };
 

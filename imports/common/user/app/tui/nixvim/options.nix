@@ -27,7 +27,8 @@
 		cursorline = true; # Highlight the line where the cursor is located
 		cmdheight = 2; # more space in the neovim command line for displaying messages
 		showmode = false; # Dont show the editor mode in status line
-
+		updatetime = 100; # Faster completion Line numbers
+		
 		# Line number
 		number = true; # Show absolute line numbers
       	relativenumber = true; # Show line numbers relative to the cursor line
@@ -53,8 +54,6 @@
       	incsearch = true; # Show matches as you type
 	    ignorecase = true; # Case-insensitive search...
      	smartcase = true; # ...unless search contains capital letters
-	
-		updatetime = 100; # Faster completion Line numbers
     };
   };
 }

@@ -8,8 +8,9 @@ in
     "${commonUser}/app/cli/git"
     "${commonUser}/app/cli/bash"
     "${commonUser}/app/cli/zsh"
-    "${commonUser}/app/gui/brave"
     "${commonUser}/app/gui/blackbox"
+    "${commonUser}/app/gui/brave"
+	"${commonUser}/app/gui/kitty"
 	"${commonUser}/app/gui/obs"
     "${commonUser}/app/tui/nixvim"
     "${commonUser}/home-manager"
@@ -37,7 +38,6 @@ in
     	helvum                 # Helvum: GTK-based pipewire patchbay
     	jdk                    # JDK: Java Development Kit
     	kdePackages.kdenlive   # Kdenlive: KDE's video editor
-    	kitty                  # Kitty: Feature-rich terminal emulator
     	libreoffice-fresh      # LibreOffice: Office suite
     	libdbusmenu            # Libdbusmenu: Library for DBus menu
     	lsd                    # LSD: An enhanced `ls` with pretty output
