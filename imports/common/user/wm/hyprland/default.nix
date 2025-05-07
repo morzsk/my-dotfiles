@@ -37,9 +37,9 @@
         "$mod CTRL, J, resizeactive, 0 10"
 
         # ── Screenshots / screencast ──────────────────────────────
-        "$mod, S, exec, grimblast --cursor copysave area"
-        "$mod CTRL, S, exec, grimblast --cursor copysave active"
-        "$mod ALT, S, exec, grimblast --cursor copysave screen"
+        "$mod, S, exec, grimblast copysave area"
+        "$mod CTRL, S, exec, grimblast copysave active"
+        "$mod ALT, S, exec, grimblast copysave screen"
 
         # ── Workspaces ────────────────────────────────────────────
         "$mod, 1, workspace, 1"

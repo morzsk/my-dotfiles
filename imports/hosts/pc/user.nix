@@ -62,9 +62,9 @@ in
     	#so                     # So: Lightweight audio file player
 		#steam                  # Steam: Gaming platform
 		#tagger                 # Tagger: Audio file tag editor
-    	thefuck                # The Fuck: Correct previous console commands
+    	thefuck                 # The Fuck: Correct previous console commands
     	#timg                   # Timg: Image viewer for the terminal
-    	tree                   # Tree: Display directory structure
+    	tree                    # Tree: Display directory structure
 		unityhub
 		vinegar
 		wine64
