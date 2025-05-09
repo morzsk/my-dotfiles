@@ -26,6 +26,7 @@ in
     	bat                    # Bat: A better `cat` command with syntax highlighting
 		blender
     	bluez                  # BlueZ: Bluetooth stack for Linux
+		bottles
     	btop                   # Btop: Resource monitor with a beautiful UI
     	calibre                # Calibre: Ebook management software
     	dconf-editor           # Dconf Editor: Configuration editor for GNOME
@@ -60,13 +61,12 @@ in
     	seahorse               # Seahorse: GNOME keyring manager
 		slurp
     	#so                     # So: Lightweight audio file player
-		#steam                  # Steam: Gaming platform
+		steam                  # Steam: Gaming platform
 		#tagger                 # Tagger: Audio file tag editor
     	thefuck                 # The Fuck: Correct previous console commands
     	#timg                   # Timg: Image viewer for the terminal
     	tree                    # Tree: Display directory structure
 		unityhub
-		vinegar
 		wine64
     	wofi                   # Wofi: GTK-based application launcher
 		#xdg-desktop-portal-gtk

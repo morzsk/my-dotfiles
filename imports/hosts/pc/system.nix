@@ -19,4 +19,9 @@ in
 	"${commonSystem}/wm/ly.nix"
     "${commonSystem}/wm/pipewire.nix"
   ];
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;  # Optional: for Remote Play
+    dedicatedServer.openFirewall = true;  # Optional: for Steam servers
+  };
 }

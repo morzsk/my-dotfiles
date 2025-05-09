@@ -5,6 +5,6 @@
     isNormalUser = true;
     description = settings.description;
     home = "/home/${settings.username}";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
   };
 }
