@@ -7,6 +7,8 @@ in
   imports = [
     "${commonSystem}/hardware-configuration.nix"
     "${commonSystem}/app/ssh.nix"
+    "${commonSystem}/app/virt-manager.nix"
+    "${commonSystem}/hardware/nvidia.nix"
     "${commonSystem}/hardware/nvidia.nix"
     "${commonSystem}/os/nix.nix"
     "${commonSystem}/os/bootloader.nix"
