@@ -66,10 +66,6 @@ in
     	#timg                   # Timg: Image viewer for the terminal
     	tree                    # Tree: Display directory structure
 		unityhub
-		(pkgs.wineWowPackages.waylandFull.override { gstreamerSupport = false; })
-		gsettings-desktop-schemas
-		samba
-		winetricks
 		vinegar
     	wofi                   # Wofi: GTK-based application launcher
 		#xdg-desktop-portal-gtk

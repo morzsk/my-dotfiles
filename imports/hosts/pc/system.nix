@@ -16,7 +16,6 @@ in
     "${commonSystem}/os/networking.nix"
     "${commonSystem}/os/printer.nix"
     "${commonSystem}/os/user.nix"
-    "${commonSystem}/os/xdg.nix"
     "${commonSystem}/style/stylix.nix"
 	# "${commonSystem}/wm/gnome"
 	"${commonSystem}/wm/ly.nix"
@@ -27,5 +26,4 @@ in
     remotePlay.openFirewall = true;  # Optional: for Remote Play
     dedicatedServer.openFirewall = true;  # Optional: for Steam servers
   };
-  programs.gamemode.enable = true;
 }
