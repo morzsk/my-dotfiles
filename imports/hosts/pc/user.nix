@@ -26,7 +26,6 @@ in
     	bat                    # Bat: A better `cat` command with syntax highlighting
 		blender
     	bluez                  # BlueZ: Bluetooth stack for Linux
-		bottles
     	btop                   # Btop: Resource monitor with a beautiful UI
     	calibre                # Calibre: Ebook management software
     	dconf-editor           # Dconf Editor: Configuration editor for GNOME
@@ -67,7 +66,11 @@ in
     	#timg                   # Timg: Image viewer for the terminal
     	tree                    # Tree: Display directory structure
 		unityhub
-		wine64
+		(pkgs.wineWowPackages.waylandFull.override { gstreamerSupport = false; })
+		gsettings-desktop-schemas
+		samba
+		winetricks
+		vinegar
     	wofi                   # Wofi: GTK-based application launcher
 		#xdg-desktop-portal-gtk
 		#xdg-desktop-portal-wlr
