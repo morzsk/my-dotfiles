@@ -25,5 +25,6 @@ in
         "${modules}/pipewire.nix"
         "${modules}/printing.nix"
         "${modules}/stylix.nix"
+        "${modules}/seahorse.nix"
     ];
 }
