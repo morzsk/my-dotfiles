@@ -1,6 +1,7 @@
 # My NixOS Dotfile
 
 My dotfiles
+```md
 .
 ├── flake.nix               (My flake)
 ├── flakes                  
@@ -13,3 +14,4 @@ My dotfiles
 └── modules
     ├── system              (System level configs)
     └── user                (User level configs)
+```
