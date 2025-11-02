@@ -36,6 +36,7 @@ in
         "${modules}/evince.nix"
         "${modules}/kitty.nix"
         "${modules}/apps.nix"
+        "${modules}/seahorse.nix"
         "${modules}/brave.nix"
         "${modules}/obsidian.nix"
         "${modules}/vscode.nix"
