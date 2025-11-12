@@ -12,5 +12,6 @@
         ripgrep
         nix-prefetch-git
     	nix-search-cli 
+        nautilus
     ];
 }

@@ -24,6 +24,11 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
+        gradle2nix = {
+            url = "github:tadfisher/gradle2nix";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         swww.url = "github:LGFae/swww";
         stylix.url = "github:danth/stylix";
     };
