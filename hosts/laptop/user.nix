@@ -16,9 +16,11 @@ in
     sessionVariables = { };
   };
 
-  # imports = [
-  # ];
+  imports = [
+
+  ];
   
-  # home.packages = [
-  # ];
+  home.packages = [
+
+  ];
 }

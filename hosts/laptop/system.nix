@@ -15,6 +15,14 @@ in
     shell = pkgs.zsh;
   };
 
-  # imports = [
-  # ];
+  imports = [
+    (modules + /system)
+    (modules + /networking)
+    (modules + /tailscale)
+    (modules + /pipewire)
+    (modules + /nix)
+    (modules + /stylix)
+    (modules + /wine)
+    (modules + /ly)
+  ];
 }
