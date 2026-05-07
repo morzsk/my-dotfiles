@@ -32,8 +32,4 @@ in
     (modules + /obsidian)
     (modules + /vscode)
   ];
-  
-  home.packages = [
-
-  ];
 }
