@@ -15,6 +15,14 @@
 	  };
 	};
 
+  general = {
+    border_size = 0;
+  };
+
+  exec-once = [
+    "swww-daemon"
+  ];
+
   bindm = [
     "$mod, mouse:272, movewindow"
   ];
