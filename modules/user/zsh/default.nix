@@ -12,15 +12,14 @@
     ZSH_THEME_GIT_PROMPT_INFO_SUFFIX="%f) "
   '';
 
-  home.sessionPath = [
-    "$HOME/.cargo/bin"
-  ];
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    initContent = ''
+      export PATH="$HOME/.cargo/bin:$PATH"
+    '';
 
     oh-my-zsh = {
       enable = true;
