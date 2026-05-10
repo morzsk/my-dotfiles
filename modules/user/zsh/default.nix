@@ -19,6 +19,7 @@
     syntaxHighlighting.enable = true;
     initContent = ''
       export PATH="$HOME/.cargo/bin:$PATH"
+      export PATH="$HOME/.rokit/bin:$PATH"
     '';
 
     oh-my-zsh = {
