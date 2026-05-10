@@ -11,7 +11,11 @@
     ZSH_THEME_GIT_PROMPT_INFO_PREFIX="(%F{red}"
     ZSH_THEME_GIT_PROMPT_INFO_SUFFIX="%f) "
   '';
-  
+
+  home.sessionPath = [
+    "$HOME/.cargo/bin"
+  ];
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
