@@ -18,7 +18,8 @@ in
 
     settings = {
       "$mod" = "SUPER";
-      inherit (config) bind bindm decoration general exec-once;
+      inherit (config) bind bindm decoration general;
+      "exec-once" = config."exec-once";
     };
   };
 }
