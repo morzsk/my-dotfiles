@@ -15,6 +15,12 @@
                 jnoortheen.nix-ide
                 rust-lang.rust-analyzer
             ] ++ (with pkgs.vscode-marketplace; [
+                # esbenp.prettier-vscode
+                dbaeumer.vscode-eslint
+                ms-vscode.vscode-typescript-next
+                roblox-ts.vscode-roblox-ts
+                evaera.vscode-rojo
+                nightrains.robloxlsp
                 # shd101wyy.markdown-preview-enhanced
                 # ms-vscode-remote.remote-ssh
                 # coder.coder-remote

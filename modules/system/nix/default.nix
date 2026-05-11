@@ -29,10 +29,12 @@
     };
   };
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
       
-  ];
+    ];
+  };
 
   boot.loader.grub.configurationLimit = 5;
 }

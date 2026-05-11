@@ -16,6 +16,7 @@
         nautilus
         proton-vpn-cli
         openvpn
+        nodejs
         claude-code
         opencode
     ];
