@@ -31,6 +31,5 @@ in
     (modules + /brave)
     (modules + /obsidian)
     (modules + /vscode)
-    (modules + /steam)
   ];
 }
