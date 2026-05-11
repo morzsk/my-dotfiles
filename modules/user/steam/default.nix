@@ -3,6 +3,5 @@
 {
   programs.steam = {
     enable = true;
-  }
-
+  };
 }
