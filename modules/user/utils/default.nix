@@ -18,6 +18,7 @@
         openvpn
         nodejs
         cargo
+        gcc
         claude-code
         opencode
     ];
