@@ -17,6 +17,7 @@
         proton-vpn-cli
         openvpn
         nodejs
+        cargo
         claude-code
         opencode
     ];

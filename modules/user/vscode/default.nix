@@ -15,7 +15,7 @@
                 jnoortheen.nix-ide
                 rust-lang.rust-analyzer
             ] ++ (with pkgs.vscode-marketplace; [
-                # esbenp.prettier-vscode
+                esbenp.prettier-vscode
                 dbaeumer.vscode-eslint
                 ms-vscode.vscode-typescript-next
                 roblox-ts.vscode-roblox-ts
