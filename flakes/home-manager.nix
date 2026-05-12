@@ -19,6 +19,7 @@ in
       inherit pkgs;
       modules = [
         inputs.stylix.homeModules.stylix
+        inputs.nix-flatpak.homeManagerModules.nix-flatpak
         (hosts + "/pc/user.nix")
       ];
     };
