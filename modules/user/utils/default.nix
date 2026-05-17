@@ -21,5 +21,6 @@
         gcc
         claude-code
         opencode
+        lmstudio
     ];
 }
