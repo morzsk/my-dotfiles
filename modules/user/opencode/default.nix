@@ -11,7 +11,7 @@
           name = "LM Studio (local)";
           npm = "@ai-sdk/openai-compatible";
           options = {
-            baseURL = "http://127.0.0.1:1234/v1";
+            baseURL = "http://10.8.0.6:1234/v1";
           };
           models = {
             "mistralai/devstral-small-2-2512" = {
