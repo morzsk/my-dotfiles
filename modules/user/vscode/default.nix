@@ -21,6 +21,7 @@
                 roblox-ts.vscode-roblox-ts
                 evaera.vscode-rojo
                 nightrains.robloxlsp
+                continue.continue
                 # shd101wyy.markdown-preview-enhanced
                 # ms-vscode-remote.remote-ssh
                 # coder.coder-remote
