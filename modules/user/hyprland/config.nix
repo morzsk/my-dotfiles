@@ -49,7 +49,7 @@
 		"$mod CTRL, J, resizeactive, 0 10"
 		
 		# Screencast
-		"$mod, S, exec, grimblast --cursor copysave area"
+		"$mod, S, exec, grimblast copysave area"
 		"$mod CTRL, S, exec, grimblast --cursor copysave active"
 		"$mod ALT, S, exec, grimblast --cursor copysave screen"
 
