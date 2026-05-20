@@ -8,5 +8,7 @@
       package = pkgs.gruvbox-plus-icons;
       name = "Gruvbox-Plus-Dark";
     };
+
+    gtk4.theme = null;
   };
 }

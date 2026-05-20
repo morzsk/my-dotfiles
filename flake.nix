@@ -31,7 +31,6 @@
 
     nix-flatpak = {
       url = "github:gmodena/nix-flatpak";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     swww.url = "github:LGFae/swww";

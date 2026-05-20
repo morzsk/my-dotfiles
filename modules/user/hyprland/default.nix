@@ -16,6 +16,7 @@ in
     enable          = true;
     xwayland.enable = true;
     systemd.enable  = true;
+    configType      = "hyprlang";
     inherit (config) extraConfig;
 
     settings = {
