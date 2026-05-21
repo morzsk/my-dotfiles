@@ -33,6 +33,7 @@
         };
 
         targets.gtk.extraCss = "window.background { border-radius: 0; }";
+        targets.neovim.enable = false;
 
         #Kitty
 		# base16Scheme = {
