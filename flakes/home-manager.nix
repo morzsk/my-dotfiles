@@ -17,6 +17,7 @@ in
   flake.homeConfigurations = {
     hyprpc = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
+      specialArgs = { inherit inputs; };
       modules = [
         inputs.stylix.homeModules.stylix
         inputs.nix-flatpak.homeManagerModules.nix-flatpak
@@ -26,7 +27,7 @@ in
 
     hyprtop = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      # specialArgs = { inherit inputs; };
+      specialArgs = { inherit inputs; };
       modules = [
         inputs.stylix.homeModules.stylix
         inputs.nix-flatpak.homeManagerModules.nix-flatpak
