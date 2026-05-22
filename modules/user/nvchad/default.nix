@@ -13,11 +13,24 @@
     extraConfig = ''
       vim.lsp.enable({'nil_ls', 'ts_ls'})
     '';
-    
+
     chadrcConfig = ''
       local M = {}
       M.base46 = { theme = "yoru" }
       return M
     '';
   };
+
+  xdg.configFile."nvim/lua/plugins/yazi.lua".text = ''
+    return {
+      dir = "${pkgs.vimPlugins.yazi-nvim}",
+      event = "VeryLazy",
+      keys = {
+        { "<leader>y", "<cmd>Yazi<cr>", desc = "Open yazi" },
+      },
+      opts = {
+        open_for_dir = false,
+      },
+    }
+  '';
 }
