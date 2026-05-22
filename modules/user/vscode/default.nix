@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: 
+{ pkgs, ... }: 
 
 {
     # https://github.com/arvigeus/nixos-config/blob/master/apps/vscode.nix

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -11,14 +11,16 @@
     readest
     nautilus
     # CLI
+    zoxide
     bat
     lsd
+    fzf
     ripgrep
     tree
     openvpn
+    proton-vpn-cli
     nix-prefetch-git
     nix-search-cli
-    proton-vpn-cli
     # TUI
     pulsemixer
     btop
