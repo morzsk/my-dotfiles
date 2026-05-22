@@ -17,6 +17,7 @@ in
   };
 
   imports = [
+    (modules + /apps)
     (modules + /git)
     (modules + /zsh)
     (modules + /utils)

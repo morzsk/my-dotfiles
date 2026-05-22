@@ -17,8 +17,7 @@ in
   };
 
   imports = [
-    (modules + /apps/pc)
-    (modules + /apps/top)
+    (modules + /apps)
     (modules + /git)
     (modules + /zsh)
     (modules + /utils)
