@@ -25,6 +25,7 @@ in
     (modules + /gtk)
     (modules + /rofi)
     (modules + /yazi)
+    (modules + /nvchad)
     (modules + /kitty)
     (modules + /flatpak)
     (modules + /apps)

@@ -17,6 +17,8 @@ in
   };
 
   imports = [
+    (modules + /apps/pc)
+    (modules + /apps/top)
     (modules + /git)
     (modules + /zsh)
     (modules + /utils)
@@ -25,13 +27,12 @@ in
     (modules + /gtk)
     (modules + /rofi)
     (modules + /yazi)
+    (modules + /nvchad)
     (modules + /kitty)
     (modules + /flatpak)
-    (modules + /apps)
     (modules + /brave)
     (modules + /obsidian)
     (modules + /vscode)
     (modules + /opencode)
-    (modules + /nvchad)
   ];
 }
