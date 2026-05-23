@@ -22,8 +22,10 @@
     nix-prefetch-git
     nix-search-cli
     # TUI
-    pulsemixer
+    clock-rs
+    fastfetch
     btop
+    pulsemixer
     claude-code
     opencode
   ];
