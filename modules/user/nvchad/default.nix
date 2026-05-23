@@ -23,7 +23,9 @@
 
   xdg.configFile."nvim/lua/plugins/yazi.lua".text = ''
     return {
+      name = "yazi.nvim",
       dir = "${pkgs.vimPlugins.yazi-nvim}",
+      build = false,
       event = "VeryLazy",
       keys = {
         { "<leader>y", "<cmd>Yazi<cr>", desc = "Open yazi" },
