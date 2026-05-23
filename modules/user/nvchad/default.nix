@@ -10,29 +10,14 @@
       typescript-language-server
     ];
 
-    extraConfig = ''
-      vim.lsp.enable({'nil_ls', 'ts_ls'})
-    '';
+    extraConfig = builtins.readFile ./extra.lua;
 
-    chadrcConfig = ''
-      local M = {}
-      M.base46 = { theme = "yoru" }
-      return M
-    '';
+    chadrcConfig = builtins.readFile ./chadrc.lua;
   };
 
-  xdg.configFile."nvim/lua/plugins/yazi.lua".text = ''
-    return {
-      name = "yazi.nvim",
-      dir = "${pkgs.vimPlugins.yazi-nvim}",
-      build = false,
-      event = "VeryLazy",
-      keys = {
-        { "<leader>y", "<cmd>Yazi<cr>", desc = "Open yazi" },
-      },
-      opts = {
-        open_for_dir = false,
-      },
-    }
-  '';
+  xdg.configFile."nvim/lua/themes/gruvbox_amoled.lua".source = ./themes/gruvbox_amoled.lua;
+
+  xdg.configFile."nvim/lua/plugins/yazi.lua".text =
+    builtins.replaceStrings [ "$YAZI_NVIM_DIR" ] [ "${pkgs.vimPlugins.yazi-nvim}" ]
+      (builtins.readFile ./plugins/yazi.lua);
 }
