@@ -34,5 +34,6 @@ in
     (modules + /obsidian)
     (modules + /vscode)
     (modules + /opencode)
+    (modules + /awww)
   ];
 }

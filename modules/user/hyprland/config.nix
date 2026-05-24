@@ -20,7 +20,8 @@
   };
 
   exec-once = [
-    "swww-daemon"
+    "awww-daemon"
+    "wallpaper-shuffle"
   ];
 
   bindm = [
