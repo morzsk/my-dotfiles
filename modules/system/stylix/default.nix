@@ -7,8 +7,6 @@
 
     polarity = "dark";
 
-    image = ./my-cool-wallpaper.png;
-
     cursor = {
       package = pkgs.capitaine-cursors-themed;
       name = "Gruvbox";
