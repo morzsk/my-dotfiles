@@ -1,6 +1,6 @@
 {
   hosts = {
-    pc = "pc";
+    pc     = "pc";
     laptop = "laptop";
   };
 
@@ -16,8 +16,9 @@
   paths = {
     hosts = ./hosts;
     modules = {
-      user = ./modules/user;
+      user   = ./modules/user;
       system = ./modules/system;
+      shared = ./modules/shared;
     };
   };
 }

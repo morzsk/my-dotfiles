@@ -10,7 +10,6 @@
     evince
     readest
     nautilus
-    prismlauncher
     # CLI
     zoxide
     bat
