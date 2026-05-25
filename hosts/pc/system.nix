@@ -1,16 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, constants, ... }:
 
 let
-  modules = ../../modules/system;
+  modules = constants.paths.modules.system;
 in
 {
-  networking.hostName = "pc";
+  networking.hostName = constants.hosts.pc;
   programs.zsh.enable = true;
 
-  users.users.mo = {
+  users.users.${constants.user.name} = {
     isNormalUser = true;
-    description = "mo";
-    home = "/home/mo";
+    description = constants.user.name;
+    home = constants.user.home;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
   };

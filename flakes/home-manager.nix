@@ -1,10 +1,9 @@
 { inputs, ... }:
 
 let
-  hosts = inputs.self + "/hosts";
-  system = "x86_64-linux";
+  constants = import ../constants.nix;
   pkgs = import inputs.nixpkgs {
-    inherit system;
+    system = constants.system;
     overlays = [ 
       inputs.nix-vscode-extensions.overlays.default 
     ];
@@ -17,21 +16,21 @@ in
   flake.homeConfigurations = {
     hyprpc = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = { inherit inputs; };
+      extraSpecialArgs = { inherit inputs constants; };
       modules = [
         inputs.stylix.homeModules.stylix
         inputs.nix-flatpak.homeManagerModules.nix-flatpak
-        (hosts + "/pc/user.nix")
+        (constants.paths.hosts + "/pc/user.nix")
       ];
     };
 
     hyprtop = inputs.home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = { inherit inputs; };
+      extraSpecialArgs = { inherit inputs constants; };
       modules = [
         inputs.stylix.homeModules.stylix
         inputs.nix-flatpak.homeManagerModules.nix-flatpak
-        (hosts + "/laptop/user.nix")
+        (constants.paths.hosts + "/laptop/user.nix")
       ];
     };
   };

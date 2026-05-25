@@ -1,16 +1,16 @@
-{ ... }:
+{ constants, ... }:
 
 let
-  modules = ../../modules/user;
+  modules = constants.paths.modules.user;
 in
 {
   programs.home-manager.enable = true;
 
   home = {
-    username = "mo";
-    homeDirectory = "/home/mo";
+    username = constants.user.name;
+    homeDirectory = constants.user.home;
 
-    stateVersion = "24.05";
+    stateVersion = constants.stateVersion;
 
     file = { };
     sessionVariables = { };
