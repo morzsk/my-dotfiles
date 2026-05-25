@@ -14,20 +14,15 @@
     #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
     # };
-    # hyprfocus = {
-    #   url = "github:daxisunder/hyprfocus";
-    #   inputs.nixpkgs.follows = "hyprland";
-    # };
+    hyprfocus = {
+      url = "github:daxisunder/hyprfocus";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # nixvim = {
-    #   url = "github:nix-community/nixvim";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
 
     nix4nvchad = {
       url = "github:nix-community/nix4nvchad";

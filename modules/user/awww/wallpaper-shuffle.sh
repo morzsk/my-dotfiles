@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-WALLPAPER_DIR="$(dirname "$(realpath "$BASH_SOURCE")")/wallpapers"
 
 while true; do
   find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) \

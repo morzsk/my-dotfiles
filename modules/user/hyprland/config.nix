@@ -2,6 +2,22 @@
 	extraConfig = ''
 		monitor=HDMI-A-1,1920x1080@60,0x0,1
 		monitor=DP-1,1920x1080@60,-1080x0,1,transform,1
+
+		plugin {
+		  hyprfocus {
+		    enabled = yes
+		    focus_animation = shrink
+		    animate_floating = yes
+		    animate_workspacechange = yes
+		    shrink {
+		      shrink_percentage = 0.95
+		      in_bezier = 0.5 0 1 1
+		      in_speed = 2
+		      out_bezier = 0.5 0 1 1
+		      out_speed = 2
+		    }
+		  }
+		}
 	'';
 	
 	decoration = {
@@ -19,11 +35,6 @@
     border_size = 0;
   };
 
-  exec-once = [
-    "awww-daemon"
-    "wallpaper-shuffle"
-  ];
-
   bindm = [
     "$mod, mouse:272, movewindow"
   ];
@@ -36,8 +47,6 @@
 		"$mod, Q, killactive"
 		"$mod SHIFT, Q, closewindow"
 		"$mod, E, exit"
-		
-		"$mod, mouse:272, movewindow"
 
 		# Screen focus
 		"$mod SHIFT, F, togglefloating"

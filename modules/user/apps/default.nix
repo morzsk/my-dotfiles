@@ -26,6 +26,5 @@
     fastfetch
     btop
     pulsemixer
-
   ];
 }

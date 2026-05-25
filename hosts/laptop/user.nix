@@ -18,6 +18,7 @@ in
 
   imports = [
     (modules + /apps)
+    (modules + /apps/top.nix)
     (modules + /git)
     (modules + /zsh)
     (modules + /hyprland)
