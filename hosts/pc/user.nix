@@ -33,6 +33,7 @@ in
     (modules + /obsidian)
     (modules + /vscode)
     (modules + /opencode)
+    (modules + /claude)
     (modules + /awww)
   ];
 }

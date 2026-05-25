@@ -29,11 +29,11 @@ in
     (modules + /nvchad)
     (modules + /kitty)
     (modules + /flatpak)
-    (modules + /apps)
     (modules + /brave)
     (modules + /obsidian)
     (modules + /vscode)
     (modules + /opencode)
+    (modules + /claude)
     (modules + /awww)
   ];
 }

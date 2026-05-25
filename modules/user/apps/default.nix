@@ -12,6 +12,7 @@
     nautilus
     prismlauncher
     # CLI
+    thefuck
     zoxide
     bat
     lsd
@@ -27,7 +28,6 @@
     fastfetch
     btop
     pulsemixer
-    claude-code
-    opencode
+
   ];
 }
