@@ -12,7 +12,6 @@
     nautilus
     prismlauncher
     # CLI
-    thefuck
     zoxide
     bat
     lsd
