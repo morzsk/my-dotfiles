@@ -14,7 +14,16 @@
 		bind = , c, centerwindow
 		bind = , p, pin
 		bind = , q, killactive
-		bind = , g, togglegroup
+		bind = , g, submap, wingo
+		bind = , escape, submap, reset
+		submap = reset
+
+		# Window-goto mode: move focus in direction
+		submap = wingo
+		bind = , h, movefocus, l
+		bind = , l, movefocus, r
+		bind = , k, movefocus, u
+		bind = , j, movefocus, d
 		bind = , escape, submap, reset
 		submap = reset
 
@@ -66,16 +75,6 @@
 		# Workspace mode: $mod+E to enter, numbers=switch, SHIFT+numbers=send window, H/L=cycle, ESC to exit
 		bind = $mod, E, submap, workspace
 		submap = workspace
-		bind = , 1, workspace, 1
-		bind = , 2, workspace, 2
-		bind = , 3, workspace, 3
-		bind = , 4, workspace, 4
-		bind = , 5, workspace, 5
-		bind = , 6, workspace, 6
-		bind = , 7, workspace, 7
-		bind = , 8, workspace, 8
-		bind = , 9, workspace, 9
-		bind = , 0, workspace, 10
 		bind = SHIFT, 1, movetoworkspacesilent, 1
 		bind = SHIFT, 2, movetoworkspacesilent, 2
 		bind = SHIFT, 3, movetoworkspacesilent, 3
@@ -86,10 +85,44 @@
 		bind = SHIFT, 8, movetoworkspacesilent, 8
 		bind = SHIFT, 9, movetoworkspacesilent, 9
 		bind = SHIFT, 0, movetoworkspacesilent, 10
-		bind = , h, workspace, m-1
-		bind = , l, workspace, m+1
 		bind = SHIFT, h, movetoworkspacesilent, m-1
 		bind = SHIFT, l, movetoworkspacesilent, m+1
+		bind = , g, submap, wspgo
+		bind = , escape, submap, reset
+		submap = reset
+
+		# Workspace-goto mode: cycle workspaces with h/l
+		submap = wspgo
+		bind = , h, workspace, m-1
+		bind = , l, workspace, m+1
+		bind = , 1, workspace, 1
+		bind = , 2, workspace, 2
+		bind = , 3, workspace, 3
+		bind = , 4, workspace, 4
+		bind = , 5, workspace, 5
+		bind = , 6, workspace, 6
+		bind = , 7, workspace, 7
+		bind = , 8, workspace, 8
+		bind = , 9, workspace, 9
+		bind = , 0, workspace, 10
+		bind = , escape, submap, reset
+		submap = reset
+
+		# Launch mode: $mod+L to enter, then q=brave w=yazi e=pulsemixer r=nvim a=obsidian s=readest
+		bind = $mod, L, submap, launch
+		submap = launch
+		bind = , q, exec, brave
+		bind = , q, submap, reset
+		bind = , w, exec, kitty -e yazi
+		bind = , w, submap, reset
+		bind = , e, exec, kitty -e pulsemixer
+		bind = , e, submap, reset
+		bind = , r, exec, kitty -e nvim
+		bind = , r, submap, reset
+		bind = , a, exec, obsidian
+		bind = , a, submap, reset
+		bind = , s, exec, readest
+		bind = , s, submap, reset
 		bind = , escape, submap, reset
 		submap = reset
 
@@ -100,7 +133,7 @@
 		    animate_floating = yes
 		    animate_workspacechange = yes
 		    shrink {
-		      shrink_percentage = 0.95
+		      shrink_percentage = 0.99
 		      in_bezier = 0.5 0 1 1
 		      in_speed = 2
 		      out_bezier = 0.5 0 1 1
@@ -109,7 +142,7 @@
 		  }
 		}
 	'';
-	
+
 	decoration = {
 	  active_opacity = 0.95;
 	  inactive_opacity = 0.95;
@@ -159,9 +192,9 @@
 		"$mod, 9, workspace, 9"
 		"$mod, 0, workspace, 10"
 
-		# Move to Workspaces 
-		"$mod ALT,  1, movetoworkspace, -1" 
-		"$mod ALT,  2, movetoworkspace, +1" 
+		# Move to Workspaces
+		"$mod ALT,  1, movetoworkspace, -1"
+		"$mod ALT,  2, movetoworkspace, +1"
 		"$mod CTRL, 1, movetoworkspacesilent, 1"
 		"$mod CTRL, 2, movetoworkspacesilent, 2"
 		"$mod CTRL, 3, movetoworkspacesilent, 3"
@@ -172,7 +205,7 @@
 		"$mod CTRL, 8, movetoworkspacesilent, 8"
 		"$mod CTRL, 9, movetoworkspacesilent, 9"
 		"$mod CTRL, 0, movetoworkspacesilent, 10"
-		
+
 		# cycle workspaces
     "$mod, bracketleft, workspace, m-1"
     "$mod, bracketright, workspace, m+1"
@@ -180,10 +213,9 @@
 		# cycle monitors
 		"$mod SHIFT, bracketleft, focusmonitor, L"
 		"$mod SHIFT, bracketright, focusmonitor, R"
-		
+
 		# Navigation
 		"$mod, H, movefocus, L"
-		"$mod, L, movefocus, R"
 		"$mod, K, movefocus, U"
 		"$mod, J, movefocus, D"
 
