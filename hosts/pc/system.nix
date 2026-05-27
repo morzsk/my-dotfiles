@@ -26,5 +26,6 @@ in
     (modules + /wine)
     (modules + /ly)
     (modules + /steam)
+    (modules + /obs)
   ];
 }
