@@ -36,5 +36,6 @@ in
     (modules + /opencode)
     (modules + /claude)
     (modules + /awww)
+    (modules + /obs)
   ];
 }
