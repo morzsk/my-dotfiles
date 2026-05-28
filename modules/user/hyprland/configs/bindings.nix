@@ -24,6 +24,10 @@
     "$mod, bracketleft, workspace, m-1"
     "$mod, bracketright, workspace, m+1"
 
+    # Move window to adjacent workspace and follow (creates if needed)
+    "$mod ALT, bracketleft, movetoworkspace, r-1"
+    "$mod ALT, bracketright, movetoworkspace, r+1"
+
     # Cycle monitors
     "$mod SHIFT, bracketleft, focusmonitor, L"
     "$mod SHIFT, bracketright, focusmonitor, R"
