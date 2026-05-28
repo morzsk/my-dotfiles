@@ -9,6 +9,10 @@
     home = "/home/mo";
   };
 
+  dirs = {
+    screenshots = "/home/mo/Pictures/Screenshots";
+  };
+
   system = "x86_64-linux";
 
   stateVersion = "24.05";

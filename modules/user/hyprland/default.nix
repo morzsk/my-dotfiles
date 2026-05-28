@@ -1,7 +1,13 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, constants, ... }:
 
 let
-  config = import ./config.nix;
+  decor    = import ./configs/decor.nix;
+  bindings = import ./configs/bindings.nix;
+  hyprHelp = pkgs.writeShellApplication {
+    name = "hypr-help";
+    runtimeInputs = with pkgs; [ jq rofi hyprland ];
+    text = builtins.readFile ./scripts/hypr-help.sh;
+  };
 in
 {
   home.packages = with pkgs; [
@@ -10,7 +16,12 @@ in
     slurp
     wl-clipboard
     wlr-randr
+    hyprHelp
   ];
+
+  home.sessionVariables = {
+    XDG_SCREENSHOTS_DIR = constants.dirs.screenshots;
+  };
 
   wayland.windowManager.hyprland = {
     enable          = true;
@@ -18,11 +29,12 @@ in
     systemd.enable  = true;
     configType      = "hyprlang";
     plugins         = [ inputs.hyprfocus.packages.${pkgs.system}.hyprfocus ];
-    inherit (config) extraConfig;
+    extraConfig     = builtins.readFile ./configs/extra-config.conf;
 
     settings = {
       "$mod" = "SUPER";
-      inherit (config) bind bindm decoration general;
+      inherit (decor) decoration general;
+      inherit (bindings) bind bindm;
       "exec-once" = [
         "wallpaper-shuffle"
       ];
