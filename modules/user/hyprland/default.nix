@@ -1,8 +1,8 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, constants, ... }:
 
 let
-  decor    = import ./decor.nix;
-  bindings = import ./bindings/bindings.nix;
+  decor    = import ./configs/decor.nix;
+  bindings = import ./configs/bindings.nix;
   hyprHelp = pkgs.writeShellApplication {
     name = "hypr-help";
     runtimeInputs = with pkgs; [ jq rofi hyprland ];
@@ -19,13 +19,17 @@ in
     hyprHelp
   ];
 
+  home.sessionVariables = {
+    XDG_SCREENSHOTS_DIR = constants.dirs.screenshots;
+  };
+
   wayland.windowManager.hyprland = {
     enable          = true;
     xwayland.enable = true;
     systemd.enable  = true;
     configType      = "hyprlang";
     plugins         = [ inputs.hyprfocus.packages.${pkgs.system}.hyprfocus ];
-    extraConfig     = builtins.readFile ./bindings/extra-config.conf;
+    extraConfig     = builtins.readFile ./configs/extra-config.conf;
 
     settings = {
       "$mod" = "SUPER";
