@@ -1,5 +1,15 @@
 { inputs, pkgs, ... }:
 
+let
+  treesitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
+    lua
+    nix
+    typescript
+    javascript
+    java
+    c_sharp
+  ]);
+in
 {
   imports = [ inputs.nix4nvchad.homeManagerModules.default ];
 
@@ -8,10 +18,12 @@
     extraPackages = with pkgs; [
       nil
       typescript-language-server
+      omnisharp-roslyn
+      dotnet-sdk
+      jdt-language-server
     ];
 
     extraConfig = builtins.readFile ./extra.lua;
-
     chadrcConfig = builtins.readFile ./chadrc.lua;
   };
 
@@ -24,4 +36,8 @@
   xdg.configFile."nvim/lua/plugins/project.lua".text =
     builtins.replaceStrings [ "$PROJECT_NVIM_DIR" ] [ "${pkgs.vimPlugins.project-nvim}" ]
       (builtins.readFile ./plugins/project.lua);
+
+  xdg.configFile."nvim/lua/plugins/treesitter.lua".text =
+    builtins.replaceStrings [ "$TREESITTER_DIR" "$TREESITTER_PARSER_DIR" ] [ "${treesitter}" "${treesitter}/parser" ]
+      (builtins.readFile ./plugins/treesitter.lua);
 }
