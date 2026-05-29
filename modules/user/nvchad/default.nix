@@ -33,7 +33,6 @@ in
       jdt-language-server
       lsof
     ];
-
     extraConfig = builtins.readFile ./extra.lua;
     chadrcConfig = builtins.readFile ./chadrc.lua;
   };
@@ -63,4 +62,10 @@ in
   xdg.configFile."nvim/lua/plugins/opencode.lua".text =
     builtins.replaceStrings [ "$OPENCODE_NVIM_DIR" ] [ "${pkgs.vimPlugins.opencode-nvim}" ]
       (builtins.readFile ./plugins/opencode.lua);
+
+  xdg.configFile."nvim/lua/plugins/jdtls.lua".text =
+    builtins.replaceStrings [ "$JDTLS_NVIM_DIR" ] [ "${pkgs.vimPlugins.nvim-jdtls}" ]
+      (builtins.readFile ./plugins/jdtls.lua);
+
+# mini-surround
 }
