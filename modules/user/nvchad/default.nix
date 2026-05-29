@@ -58,4 +58,8 @@ in
   xdg.configFile."nvim/lua/plugins/unity-sync.lua".text =
     builtins.replaceStrings [ "$UNITY_SYNC_DIR" ] [ "${nvim-unity-sync}" ]
       (builtins.readFile ./plugins/unity-sync.lua);
+
+  xdg.configFile."nvim/lua/plugins/opencode.lua".text =
+    builtins.replaceStrings [ "$OPENCODE_NVIM_DIR" ] [ "${pkgs.vimPlugins.opencode-nvim}" ]
+      (builtins.readFile ./plugins/opencode.lua);
 }
