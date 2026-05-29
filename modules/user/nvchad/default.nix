@@ -31,6 +31,7 @@ in
       omnisharp-roslyn
       dotnet-sdk
       jdt-language-server
+      lsof
     ];
 
     extraConfig = builtins.readFile ./extra.lua;
