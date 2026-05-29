@@ -7,6 +7,7 @@
     "$mod, slash, exec, hypr-help"
     "$mod, Q, killactive"
     "$mod SHIFT, E, exit"
+    "$mod SHIFT, escape, submap, reset"
 
     # Workspaces
     "$mod, 1, workspace, 1"
