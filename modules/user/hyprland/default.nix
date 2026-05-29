@@ -28,7 +28,7 @@ in
     xwayland.enable = true;
     systemd.enable  = true;
     configType      = "hyprlang";
-    plugins         = [ inputs.hyprfocus.packages.${pkgs.system}.hyprfocus ];
+    plugins         = [ inputs.hyprfocus.packages.${pkgs.stdenv.hostPlatform.system}.hyprfocus ];
     extraConfig     = builtins.readFile ./configs/extra-config.conf;
 
     settings = {

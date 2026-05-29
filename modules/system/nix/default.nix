@@ -5,12 +5,13 @@
 
   xdg.portal = {
 	  enable = true;
+	  config.common.default = "*";
 	};
 
   services.flatpak.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
-  environment.systemPackages = with pkgs; [ xorg.libXdamage ];
+  environment.systemPackages = with pkgs; [ libxdamage ];
 
   system.stateVersion = "24.05";
 
