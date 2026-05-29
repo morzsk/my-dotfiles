@@ -9,7 +9,10 @@
   home.packages = with pkgs; [
     # Dev
     nodejs
+    rustc
     cargo
+    clippy
+    rustfmt
     gcc
     # GUI
     unityhub

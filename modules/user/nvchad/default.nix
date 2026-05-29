@@ -18,6 +18,7 @@ let
     javascript
     java
     c_sharp
+    rust
   ]);
 in
 {
@@ -32,6 +33,7 @@ in
       dotnet-sdk
       jdt-language-server
       lsof
+      rust-analyzer
     ];
     extraConfig = builtins.readFile ./extra.lua;
     chadrcConfig = builtins.readFile ./chadrc.lua;
@@ -66,6 +68,10 @@ in
   xdg.configFile."nvim/lua/plugins/jdtls.lua".text =
     builtins.replaceStrings [ "$JDTLS_NVIM_DIR" ] [ "${pkgs.vimPlugins.nvim-jdtls}" ]
       (builtins.readFile ./plugins/jdtls.lua);
+
+  xdg.configFile."nvim/lua/plugins/rust.lua".text =
+    builtins.replaceStrings [ "$RUSTACEANVIM_DIR" ] [ "${pkgs.vimPlugins.rustaceanvim}" ]
+      (builtins.readFile ./plugins/rust.lua);
 
 # mini-surround
 }
