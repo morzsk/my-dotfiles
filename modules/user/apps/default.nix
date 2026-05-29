@@ -7,6 +7,7 @@
     cargo
     gcc
     # GUI
+    unityhub
     evince
     readest
     nautilus
