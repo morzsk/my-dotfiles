@@ -1,6 +1,16 @@
 { inputs, pkgs, ... }:
 
 let
+  nvim-unity-sync = pkgs.vimUtils.buildVimPlugin {
+    name = "nvim-unity-sync";
+    src = pkgs.fetchFromGitHub {
+      owner = "apyra";
+      repo = "nvim-unity-sync";
+      rev = "b556e5adaf05e69626e23025a969a981e4eeaf32";
+      hash = "sha256-keRm3qvvyLi3otKwKoPF8XULoDehYt3SGIzgUP+vhrk=";
+    };
+  };
+
   treesitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
     lua
     nix
@@ -40,4 +50,12 @@ in
   xdg.configFile."nvim/lua/plugins/treesitter.lua".text =
     builtins.replaceStrings [ "$TREESITTER_DIR" "$TREESITTER_PARSER_DIR" ] [ "${treesitter}" "${treesitter}/parser" ]
       (builtins.readFile ./plugins/treesitter.lua);
+
+  xdg.configFile."nvim/lua/plugins/unity.lua".text =
+    builtins.replaceStrings [ "$UNITY_NVIM_DIR" ] [ "${pkgs.vimPlugins.nvim-unity}" ]
+      (builtins.readFile ./plugins/unity.lua);
+
+  xdg.configFile."nvim/lua/plugins/unity-sync.lua".text =
+    builtins.replaceStrings [ "$UNITY_SYNC_DIR" ] [ "${nvim-unity-sync}" ]
+      (builtins.readFile ./plugins/unity-sync.lua);
 }
