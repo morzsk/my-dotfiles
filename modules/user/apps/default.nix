@@ -20,7 +20,6 @@
     readest
     nautilus
     # CLI
-    ripgrep
     tree
     openvpn
     proton-vpn-cli
