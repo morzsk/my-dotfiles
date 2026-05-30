@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 
 let
   nvim-unity-sync = pkgs.vimUtils.buildVimPlugin {
@@ -72,6 +72,8 @@ in
   xdg.configFile."nvim/lua/plugins/rust.lua".text =
     builtins.replaceStrings [ "$RUSTACEANVIM_DIR" ] [ "${pkgs.vimPlugins.rustaceanvim}" ]
       (builtins.readFile ./plugins/rust.lua);
+
+  home.activation.nvChadBarrier = lib.hm.dag.entryBetween [ "linkGeneration" ] [ "copyNvChad" ] "";
 
 # mini-surround
 }
