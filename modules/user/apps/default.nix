@@ -20,10 +20,6 @@
     readest
     nautilus
     # CLI
-    zoxide
-    bat
-    lsd
-    fzf
     ripgrep
     tree
     openvpn
@@ -32,8 +28,6 @@
     nix-search-cli
     # TUI
     clock-rs
-    fastfetch
-    btop
     pulsemixer
   ];
 }
