@@ -50,12 +50,12 @@
       expat            # XML parsing — project and config files
       libxcb           # Low-level X11 connection used by the editor window
       libxkbcommon     # Keyboard layout handling
-      xorg.libXcomposite # Window compositing (transparency, overlays)
-      xorg.libXdamage  # Tracks screen regions that need repainting
-      xorg.libXext     # Common X11 extensions
-      xorg.libXfixes   # Cursor and region fix extensions
-      xorg.libXrandr   # Monitor resolution and multi-display support
-      xorg.libxshmfence # Shared memory fences for GPU synchronisation
+      libxcomposite # Window compositing (transparency, overlays)
+      libxdamage    # Tracks screen regions that need repainting
+      libxext       # Common X11 extensions
+      libxfixes     # Cursor and region fix extensions
+      libxrandr     # Monitor resolution and multi-display support
+      libxshmfence  # Shared memory fences for GPU synchronisation
       mesa             # Open-source OpenGL/Vulkan implementation
     ];
   };

@@ -25,7 +25,8 @@ in
     (modules + /stylix)
     (modules + /wine)
     (modules + /ly)
-    (modules + /steam)
+    # (modules + /steam)
     (modules + /obs)
+    (modules + /brave)
   ];
 }

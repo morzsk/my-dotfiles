@@ -57,6 +57,9 @@ M.type = "dark"
 M = require("base46").override_theme(M, "gruvbox_amoled")
 
 M.polish_hl = {
+  defaults = {
+    Visual = { bg = "#3c3836" },
+  },
   syntax = {
     Operator = { fg = M.base_30.nord_blue },
   },

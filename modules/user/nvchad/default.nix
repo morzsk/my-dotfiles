@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, lib, ... }:
 
 let
   nvim-unity-sync = pkgs.vimUtils.buildVimPlugin {
@@ -18,6 +18,7 @@ let
     javascript
     java
     c_sharp
+    rust
   ]);
 in
 {
@@ -31,8 +32,9 @@ in
       omnisharp-roslyn
       dotnet-sdk
       jdt-language-server
+      lsof
+      rust-analyzer
     ];
-
     extraConfig = builtins.readFile ./extra.lua;
     chadrcConfig = builtins.readFile ./chadrc.lua;
   };
@@ -58,4 +60,20 @@ in
   xdg.configFile."nvim/lua/plugins/unity-sync.lua".text =
     builtins.replaceStrings [ "$UNITY_SYNC_DIR" ] [ "${nvim-unity-sync}" ]
       (builtins.readFile ./plugins/unity-sync.lua);
+
+  xdg.configFile."nvim/lua/plugins/opencode.lua".text =
+    builtins.replaceStrings [ "$OPENCODE_NVIM_DIR" ] [ "${pkgs.vimPlugins.opencode-nvim}" ]
+      (builtins.readFile ./plugins/opencode.lua);
+
+  xdg.configFile."nvim/lua/plugins/jdtls.lua".text =
+    builtins.replaceStrings [ "$JDTLS_NVIM_DIR" ] [ "${pkgs.vimPlugins.nvim-jdtls}" ]
+      (builtins.readFile ./plugins/jdtls.lua);
+
+  xdg.configFile."nvim/lua/plugins/rust.lua".text =
+    builtins.replaceStrings [ "$RUSTACEANVIM_DIR" ] [ "${pkgs.vimPlugins.rustaceanvim}" ]
+      (builtins.readFile ./plugins/rust.lua);
+
+  home.activation.nvChadBarrier = lib.hm.dag.entryBetween [ "linkGeneration" ] [ "copyNvChad" ] "";
+
+# mini-surround
 }

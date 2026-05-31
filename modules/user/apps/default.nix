@@ -1,10 +1,18 @@
 { pkgs, ... }:
 
 {
+  programs.java = {
+    enable = true;
+    package = pkgs.jdk25;
+  };
+
   home.packages = with pkgs; [
     # Dev
     nodejs
+    rustc
     cargo
+    clippy
+    rustfmt
     gcc
     # GUI
     unityhub
@@ -12,11 +20,6 @@
     readest
     nautilus
     # CLI
-    zoxide
-    bat
-    lsd
-    fzf
-    ripgrep
     tree
     openvpn
     proton-vpn-cli
@@ -24,8 +27,6 @@
     nix-search-cli
     # TUI
     clock-rs
-    fastfetch
-    btop
     pulsemixer
   ];
 }
