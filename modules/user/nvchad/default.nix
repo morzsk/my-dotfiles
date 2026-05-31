@@ -19,6 +19,7 @@ let
     java
     c_sharp
     rust
+    zig
   ]);
 in
 {
@@ -34,6 +35,7 @@ in
       jdt-language-server
       lsof
       rust-analyzer
+      zls
     ];
     extraConfig = builtins.readFile ./extra.lua;
     chadrcConfig = builtins.readFile ./chadrc.lua;
@@ -76,4 +78,5 @@ in
   home.activation.nvChadBarrier = lib.hm.dag.entryBetween [ "linkGeneration" ] [ "copyNvChad" ] "";
 
 # mini-surround
+# nvim-dap + nvim-dap-ui: in-editor debugger (needs per-language adapter: codelldb for C/C++/Zig, debugpy for Python)
 }
