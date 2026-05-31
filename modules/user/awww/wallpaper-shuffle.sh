@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-until systemctl --user is-active --quiet awww.service; do
-  sleep 1
-done
+# until systemctl --user is-active --quiet awww.service; do
+#   sleep 1
+# done
 
 while true; do
   find "$WALLPAPER_DIR" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" \) \

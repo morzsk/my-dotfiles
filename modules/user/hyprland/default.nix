@@ -3,6 +3,7 @@
 let
   decor    = import ./configs/decor.nix;
   bindings = import ./configs/bindings.nix;
+  rules    = import ./configs/rules.nix;
   hyprHelp = pkgs.writeShellApplication {
     name = "hypr-help";
     runtimeInputs = with pkgs; [ jq rofi hyprland ];
@@ -29,15 +30,13 @@ in
     systemd.enable  = true;
     configType      = "hyprlang";
     plugins         = [ inputs.hyprfocus.packages.${pkgs.stdenv.hostPlatform.system}.hyprfocus ];
-    extraConfig     = builtins.readFile ./configs/extra-config.conf;
+    extraConfig     = bindings.submaps + builtins.readFile ./configs/extra-config.conf;
 
     settings = {
       "$mod" = "SUPER";
       inherit (decor) decoration general;
       inherit (bindings) bind bindm;
-      "exec-once" = [
-        "wallpaper-shuffle"
-      ];
+      inherit (rules) "exec-once" windowrule;
     };
   };
 }

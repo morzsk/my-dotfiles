@@ -27,5 +27,6 @@ in
     (modules + /ly)
     # (modules + /steam)
     (modules + /obs)
+    (modules + /brave)
   ];
 }
