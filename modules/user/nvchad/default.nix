@@ -20,6 +20,9 @@ let
     c_sharp
     rust
     zig
+    c
+    cpp
+    bash
   ]);
 in
 {
@@ -36,6 +39,13 @@ in
       lsof
       rust-analyzer
       zls
+      clang-tools
+      bash-language-server
+      stylua
+      nixfmt-rfc-style
+      prettier
+      shfmt
+      rustfmt
     ];
     extraConfig = builtins.readFile ./extra.lua;
     chadrcConfig = builtins.readFile ./chadrc.lua;
@@ -74,6 +84,10 @@ in
   xdg.configFile."nvim/lua/plugins/rust.lua".text =
     builtins.replaceStrings [ "$RUSTACEANVIM_DIR" ] [ "${pkgs.vimPlugins.rustaceanvim}" ]
       (builtins.readFile ./plugins/rust.lua);
+
+  xdg.configFile."nvim/lua/plugins/conform.lua".text =
+    builtins.replaceStrings [ "$CONFORM_DIR" ] [ "${pkgs.vimPlugins.conform-nvim}" ]
+      (builtins.readFile ./plugins/conform.lua);
 
   home.activation.nvChadBarrier = lib.hm.dag.entryBetween [ "linkGeneration" ] [ "copyNvChad" ] "";
 
