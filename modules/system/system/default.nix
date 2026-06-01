@@ -21,10 +21,6 @@
   ];
 
   fonts.packages = with pkgs; [
-    noto-fonts          # Latin, Cyrillic (Russian), Greek, and most other scripts
-    noto-fonts-cjk-sans # Chinese, Japanese, Korean
-    noto-fonts-cjk-serif
-    noto-fonts-arabic
-    noto-fonts-extra    # remaining scripts (Hebrew, Thai, Hindi, etc.)
+    noto-fonts
   ];
 }
