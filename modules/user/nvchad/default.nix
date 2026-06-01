@@ -20,6 +20,9 @@ let
     c_sharp
     rust
     zig
+    c
+    cpp
+    bash
   ]);
 in
 {
@@ -36,6 +39,13 @@ in
       lsof
       rust-analyzer
       zls
+      clang-tools
+      bash-language-server
+      stylua
+      nixfmt
+      prettier
+      shfmt
+      rustfmt
     ];
     extraConfig = builtins.readFile ./extra.lua;
     chadrcConfig = builtins.readFile ./chadrc.lua;
@@ -75,8 +85,26 @@ in
     builtins.replaceStrings [ "$RUSTACEANVIM_DIR" ] [ "${pkgs.vimPlugins.rustaceanvim}" ]
       (builtins.readFile ./plugins/rust.lua);
 
+  xdg.configFile."nvim/lua/plugins/conform.lua".text =
+    builtins.replaceStrings [ "$CONFORM_DIR" ] [ "${pkgs.vimPlugins.conform-nvim}" ]
+      (builtins.readFile ./plugins/conform.lua);
+
+  xdg.configFile."nvim/lua/plugins/dap.lua".text =
+    builtins.replaceStrings [ "$DAP_DIR" "$CODELLDB_PATH" ]
+      [ "${pkgs.vimPlugins.nvim-dap}"
+        "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb"
+      ]
+      (builtins.readFile ./plugins/dap.lua);
+
+  xdg.configFile."nvim/lua/plugins/dap-ui.lua".text =
+    builtins.replaceStrings [ "$DAP_UI_DIR" "$NIO_DIR" "$DAP_VIRTUAL_TEXT_DIR" ]
+      [ "${pkgs.vimPlugins.nvim-dap-ui}"
+        "${pkgs.vimPlugins.nvim-nio}"
+        "${pkgs.vimPlugins.nvim-dap-virtual-text}"
+      ]
+      (builtins.readFile ./plugins/dap-ui.lua);
+
   home.activation.nvChadBarrier = lib.hm.dag.entryBetween [ "linkGeneration" ] [ "copyNvChad" ] "";
 
 # mini-surround
-# nvim-dap + nvim-dap-ui: in-editor debugger (needs per-language adapter: codelldb for C/C++/Zig, debugpy for Python)
 }

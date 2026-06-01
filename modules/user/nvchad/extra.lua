@@ -1,1 +1,1 @@
-vim.lsp.enable({ "nil_ls", "ts_ls", "omnisharp", "zls" })
+vim.lsp.enable({ "nil_ls", "ts_ls", "omnisharp", "zls", "clangd", "bashls" })

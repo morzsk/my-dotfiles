@@ -1,0 +1,45 @@
+return {
+  name = "nvim-dap",
+  dir = "$DAP_DIR",
+  build = false,
+  keys = {
+    { "<F5>",        function() require("dap").continue() end,                                                    desc = "DAP continue" },
+    { "<F10>",       function() require("dap").step_over() end,                                                   desc = "DAP step over" },
+    { "<F11>",       function() require("dap").step_into() end,                                                   desc = "DAP step into" },
+    { "<F12>",       function() require("dap").step_out() end,                                                    desc = "DAP step out" },
+    { "<leader>db",  function() require("dap").toggle_breakpoint() end,                                           desc = "Toggle breakpoint" },
+    { "<leader>dB",  function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end,        desc = "Conditional breakpoint" },
+    { "<leader>dr",  function() require("dap").repl.open() end,                                                   desc = "DAP REPL" },
+    { "<leader>dl",  function() require("dap").run_last() end,                                                    desc = "DAP run last" },
+  },
+  config = function()
+    local dap = require("dap")
+
+    dap.adapters.codelldb = {
+      type = "server",
+      port = "${port}",
+      executable = {
+        command = "$CODELLDB_PATH",
+        args = { "--port", "${port}" },
+      },
+    }
+
+    local codelldb_cfg = {
+      {
+        name = "Launch file",
+        type = "codelldb",
+        request = "launch",
+        program = function()
+          return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+      },
+    }
+
+    dap.configurations.c   = codelldb_cfg
+    dap.configurations.cpp = codelldb_cfg
+    dap.configurations.rust = codelldb_cfg
+    dap.configurations.zig  = codelldb_cfg
+  end,
+}

@@ -19,6 +19,7 @@
     evince
     readest
     nautilus
+    pear-desktop
     # CLI
     tree
     openvpn
