@@ -47,5 +47,10 @@ return {
     dap.configurations.cpp = codelldb_cfg
     dap.configurations.rust = codelldb_cfg
     dap.configurations.zig  = codelldb_cfg
+
+    dap.configurations.java = {
+      { type = "java", request = "launch", name = "Launch" },
+      { type = "java", request = "attach", name = "Attach", hostName = "127.0.0.1", port = 5005 },
+    }
   end,
 }

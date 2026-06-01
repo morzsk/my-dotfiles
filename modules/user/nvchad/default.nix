@@ -11,6 +11,8 @@ let
     };
   };
 
+  javaDebugServerDir = "${pkgs.vscode-extensions.vscjava.vscode-java-debug}/share/vscode/extensions/vscjava.vscode-java-debug/server";
+
   treesitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
     lua
     nix
@@ -78,7 +80,8 @@ in
       (builtins.readFile ./plugins/opencode.lua);
 
   xdg.configFile."nvim/lua/plugins/jdtls.lua".text =
-    builtins.replaceStrings [ "$JDTLS_NVIM_DIR" ] [ "${pkgs.vimPlugins.nvim-jdtls}" ]
+    builtins.replaceStrings [ "$JDTLS_NVIM_DIR" "$JAVA_DEBUG_SERVER_DIR" ]
+      [ "${pkgs.vimPlugins.nvim-jdtls}" javaDebugServerDir ]
       (builtins.readFile ./plugins/jdtls.lua);
 
   xdg.configFile."nvim/lua/plugins/rust.lua".text =
