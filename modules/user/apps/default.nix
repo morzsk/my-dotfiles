@@ -29,5 +29,6 @@
     # TUI
     clock-rs
     pulsemixer
+    serie
   ];
 }
