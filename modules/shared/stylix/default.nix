@@ -9,8 +9,8 @@
 
     cursor = {
       package = pkgs.capitaine-cursors-themed;
-      name = "Gruvbox";
-      size = 24;
+      name = "Capitaine Cursors (Gruvbox)";
+      size = 20;
     };
 
     fonts = {
