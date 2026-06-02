@@ -100,12 +100,16 @@ in
       (builtins.readFile ./plugins/dap.lua);
 
   xdg.configFile."nvim/lua/plugins/dap-ui.lua".text =
-    builtins.replaceStrings [ "$DAP_UI_DIR" "$NIO_DIR" "$DAP_VIRTUAL_TEXT_DIR" ]
+    builtins.replaceStrings [ "$DAP_UI_DIR" "$NIO_DIR" ]
       [ "${pkgs.vimPlugins.nvim-dap-ui}"
         "${pkgs.vimPlugins.nvim-nio}"
-        "${pkgs.vimPlugins.nvim-dap-virtual-text}"
       ]
       (builtins.readFile ./plugins/dap-ui.lua);
+
+  xdg.configFile."nvim/lua/plugins/dap-virtual-text.lua".text =
+    builtins.replaceStrings [ "$DAP_VIRTUAL_TEXT_DIR" "$TREESITTER_DIR" ]
+      [ "${pkgs.vimPlugins.nvim-dap-virtual-text}" "${treesitter}" ]
+      (builtins.readFile ./plugins/dap-virtual-text.lua);
 
   home.activation.nvChadBarrier = lib.hm.dag.entryBetween [ "linkGeneration" ] [ "copyNvChad" ] "";
 
