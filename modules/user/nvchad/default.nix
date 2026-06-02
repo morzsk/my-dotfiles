@@ -111,6 +111,10 @@ in
       [ "${pkgs.vimPlugins.nvim-dap-virtual-text}" "${treesitter}" ]
       (builtins.readFile ./plugins/dap-virtual-text.lua);
 
+  xdg.configFile."nvim/lua/plugins/treesitter-context.lua".text =
+    builtins.replaceStrings [ "$TREESITTER_CONTEXT_DIR" ] [ "${pkgs.vimPlugins.nvim-treesitter-context}" ]
+      (builtins.readFile ./plugins/treesitter-context.lua);
+
   home.activation.nvChadBarrier = lib.hm.dag.entryBetween [ "linkGeneration" ] [ "copyNvChad" ] "";
 
 # mini-surround
