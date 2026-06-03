@@ -25,6 +25,7 @@ let
     c
     cpp
     bash
+    asm
   ]);
 in
 {

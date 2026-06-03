@@ -14,6 +14,8 @@
     clippy
     rustfmt
     gcc
+    qemu
+    gcc-arm-embedded
     # GUI
     unityhub
     evince
