@@ -23,6 +23,7 @@
     nautilus
     pear-desktop
     # CLI
+    gnome-epub-thumbnailer
     tree
     openvpn
     proton-vpn-cli
