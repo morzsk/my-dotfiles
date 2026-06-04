@@ -1,4 +1,9 @@
-{ inputs, pkgs, lib, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 let
   nvim-unity-sync = pkgs.vimUtils.buildVimPlugin {
@@ -13,20 +18,22 @@ let
 
   javaDebugServerDir = "${pkgs.vscode-extensions.vscjava.vscode-java-debug}/share/vscode/extensions/vscjava.vscode-java-debug/server";
 
-  treesitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
-    lua
-    nix
-    typescript
-    javascript
-    java
-    c_sharp
-    rust
-    zig
-    c
-    cpp
-    bash
-    asm
-  ]);
+  treesitter = pkgs.vimPlugins.nvim-treesitter.withPlugins (
+    p: with p; [
+      lua
+      nix
+      typescript
+      javascript
+      java
+      c_sharp
+      rust
+      zig
+      c
+      cpp
+      bash
+      asm
+    ]
+  );
 in
 {
   imports = [ inputs.nix4nvchad.homeManagerModules.default ];
@@ -65,7 +72,9 @@ in
       (builtins.readFile ./plugins/project.lua);
 
   xdg.configFile."nvim/lua/plugins/treesitter.lua".text =
-    builtins.replaceStrings [ "$TREESITTER_DIR" "$TREESITTER_PARSER_DIR" ] [ "${treesitter}" "${treesitter}/parser" ]
+    builtins.replaceStrings
+      [ "$TREESITTER_DIR" "$TREESITTER_PARSER_DIR" ]
+      [ "${treesitter}" "${treesitter}/parser" ]
       (builtins.readFile ./plugins/treesitter.lua);
 
   xdg.configFile."nvim/lua/plugins/unity.lua".text =
@@ -81,7 +90,8 @@ in
       (builtins.readFile ./plugins/opencode.lua);
 
   xdg.configFile."nvim/lua/plugins/jdtls.lua".text =
-    builtins.replaceStrings [ "$JDTLS_NVIM_DIR" "$JAVA_DEBUG_SERVER_DIR" ]
+    builtins.replaceStrings
+      [ "$JDTLS_NVIM_DIR" "$JAVA_DEBUG_SERVER_DIR" ]
       [ "${pkgs.vimPlugins.nvim-jdtls}" javaDebugServerDir ]
       (builtins.readFile ./plugins/jdtls.lua);
 
@@ -94,29 +104,40 @@ in
       (builtins.readFile ./plugins/conform.lua);
 
   xdg.configFile."nvim/lua/plugins/dap.lua".text =
-    builtins.replaceStrings [ "$DAP_DIR" "$CODELLDB_PATH" ]
-      [ "${pkgs.vimPlugins.nvim-dap}"
+    builtins.replaceStrings
+      [ "$DAP_DIR" "$CODELLDB_PATH" ]
+      [
+        "${pkgs.vimPlugins.nvim-dap}"
         "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb"
       ]
       (builtins.readFile ./plugins/dap.lua);
 
   xdg.configFile."nvim/lua/plugins/dap-ui.lua".text =
-    builtins.replaceStrings [ "$DAP_UI_DIR" "$NIO_DIR" ]
-      [ "${pkgs.vimPlugins.nvim-dap-ui}"
+    builtins.replaceStrings
+      [ "$DAP_UI_DIR" "$NIO_DIR" ]
+      [
+        "${pkgs.vimPlugins.nvim-dap-ui}"
         "${pkgs.vimPlugins.nvim-nio}"
       ]
       (builtins.readFile ./plugins/dap-ui.lua);
 
   xdg.configFile."nvim/lua/plugins/dap-virtual-text.lua".text =
-    builtins.replaceStrings [ "$DAP_VIRTUAL_TEXT_DIR" "$TREESITTER_DIR" ]
+    builtins.replaceStrings
+      [ "$DAP_VIRTUAL_TEXT_DIR" "$TREESITTER_DIR" ]
       [ "${pkgs.vimPlugins.nvim-dap-virtual-text}" "${treesitter}" ]
       (builtins.readFile ./plugins/dap-virtual-text.lua);
 
   xdg.configFile."nvim/lua/plugins/treesitter-context.lua".text =
-    builtins.replaceStrings [ "$TREESITTER_CONTEXT_DIR" ] [ "${pkgs.vimPlugins.nvim-treesitter-context}" ]
+    builtins.replaceStrings
+      [ "$TREESITTER_CONTEXT_DIR" ]
+      [ "${pkgs.vimPlugins.nvim-treesitter-context}" ]
       (builtins.readFile ./plugins/treesitter-context.lua);
+
+  xdg.configFile."nvim/lua/plugins/snacks.lua".text =
+    builtins.replaceStrings [ "$SNACKS_NVIM_DIR" ] [ "${pkgs.vimPlugins.snacks-nvim}" ]
+      (builtins.readFile ./plugins/snacks.lua);
 
   home.activation.nvChadBarrier = lib.hm.dag.entryBetween [ "linkGeneration" ] [ "copyNvChad" ] "";
 
-# mini-surround
+  # mini-surround
 }
