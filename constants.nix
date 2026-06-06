@@ -11,6 +11,7 @@
 
   dirs = {
     screenshots = "/home/mo/Pictures/Screenshots";
+    clips       = "/home/mo/Videos/Clips";
   };
 
   system = "x86_64-linux";

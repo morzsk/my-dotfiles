@@ -37,14 +37,15 @@
     stylix.url = "github:danth/stylix";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    flake-parts,
-    ...
-  } @ inputs:
-	flake-parts.lib.mkFlake {inherit inputs;} {
-		systems = nixpkgs.lib.systems.flakeExposed;
-		imports = [./flakes];
-	};
+  outputs =
+    {
+      self,
+      nixpkgs,
+      flake-parts,
+      ...
+    }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = nixpkgs.lib.systems.flakeExposed;
+      imports = [ ./flakes ];
+    };
 }

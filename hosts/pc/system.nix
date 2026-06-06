@@ -11,7 +11,10 @@ in
     isNormalUser = true;
     description = constants.user.name;
     home = constants.user.home;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -25,8 +28,9 @@ in
     (modules + /stylix)
     (modules + /wine)
     (modules + /ly)
-    # (modules + /steam)
+    (modules + /steam)
     (modules + /obs)
     (modules + /brave)
+    (modules + /gpu-screen-recorder)
   ];
 }
