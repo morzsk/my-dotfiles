@@ -13,7 +13,10 @@ in
     stateVersion = constants.stateVersion;
 
     file = { };
-    sessionVariables = { };
+    sessionVariables = {
+      EDITOR = "nvim";
+      MANPAGER = "nvim +Man!";
+    };
   };
 
   imports = [

@@ -16,7 +16,10 @@ in
         text = "";
       };
     }) constants.dirs;
-    sessionVariables = { };
+    sessionVariables = {
+      EDITOR = "nvim";
+      MANPAGER = "nvim +Man!";
+    };
   };
 
   imports = [
