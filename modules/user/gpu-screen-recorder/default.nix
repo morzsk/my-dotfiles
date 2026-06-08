@@ -29,7 +29,8 @@ in
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${pkgs.gpu-screen-recorder}/bin/gpu-screen-recorder -w HDMI-A-1 -f 60 -a default_output -a default_input -c mp4 -r 600 -o ${clipsDir}";
+      # TODO: figure out how to multi-track mic
+      ExecStart = "${pkgs.gpu-screen-recorder}/bin/gpu-screen-recorder -w HDMI-A-1 -f 60 -a default_output|default_input -c mp4 -r 600 -o ${clipsDir}";
       Restart = "on-failure";
       RestartSec = "5";
     };
