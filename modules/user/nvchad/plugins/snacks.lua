@@ -5,5 +5,6 @@ return {
   lazy = false,
   opts = {
     input = { enabled = true },
+    picker = { enabled = true },
   },
 }
