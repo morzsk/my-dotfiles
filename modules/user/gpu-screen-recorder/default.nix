@@ -13,10 +13,29 @@ let
     ];
     text = builtins.readFile ./clip-save.sh;
   };
+
+  clipRecordStart = pkgs.writeShellApplication {
+    name = "clip-record-start";
+    runtimeInputs = with pkgs; [
+      gpu-screen-recorder
+      libnotify
+    ];
+    text = builtins.readFile ./clip-record-start.sh;
+  };
+
+  clipRecordStop = pkgs.writeShellApplication {
+    name = "clip-record-stop";
+    runtimeInputs = with pkgs; [
+      libnotify
+    ];
+    text = builtins.readFile ./clip-record-stop.sh;
+  };
 in
 {
   home.packages = [
     clipSave
+    clipRecordStart
+    clipRecordStop
     pkgs.gpu-screen-recorder
   ];
 
@@ -30,7 +49,7 @@ in
     };
     Service = {
       # TODO: figure out how to multi-track mic
-      ExecStart = "${pkgs.gpu-screen-recorder}/bin/gpu-screen-recorder -w HDMI-A-1 -f 60 -a default_output|default_input -c mp4 -r 600 -o ${clipsDir}";
+      ExecStart = "${pkgs.gpu-screen-recorder}/bin/gpu-screen-recorder -w screen -f 60 -a default_output|default_input -c mp4 -r 600 -o ${clipsDir}";
       Restart = "on-failure";
       RestartSec = "5";
     };

@@ -25,5 +25,6 @@ in
     (modules + /wine)
     (modules + /ly)
     (modules + /brave)
+    (modules + /gpu-screen-recorder)
   ];
 }

@@ -1,4 +1,4 @@
-{ constants, ... }:
+{ lib, constants, ... }:
 
 let
   modules = constants.paths.modules.user;
@@ -9,10 +9,13 @@ in
   home = {
     username = constants.user.name;
     homeDirectory = constants.user.home;
-
     stateVersion = constants.stateVersion;
-
-    file = { };
+    file = lib.mapAttrs' (name: path: {
+      name = lib.removePrefix (constants.user.home + "/") path + "/.keep";
+      value = {
+        text = "";
+      };
+    }) constants.dirs;
     sessionVariables = {
       EDITOR = "nvim";
       MANPAGER = "nvim +Man!";
@@ -42,5 +45,6 @@ in
     (modules + /opencode)
     (modules + /claude)
     (modules + /awww)
+    (modules + /gpu-screen-recorder)
   ];
 }
