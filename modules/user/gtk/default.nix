@@ -9,6 +9,5 @@
       name = "Gruvbox-Plus-Dark";
     };
 
-    gtk4.theme = null;
   };
 }
