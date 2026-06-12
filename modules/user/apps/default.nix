@@ -17,7 +17,7 @@
     qemu
     gcc-arm-embedded
     # GUI
-    unityhub
+    # unityhub
     evince
     readest
     nautilus

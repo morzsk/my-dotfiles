@@ -57,7 +57,8 @@ in
       shfmt
       rustfmt
     ];
-    extraConfig = builtins.readFile ./extra.lua;
+    extraConfig = builtins.replaceStrings [ "$DOTNET_SDK_PATH" ] [ "${pkgs.dotnet-sdk}" ]
+      (builtins.readFile ./extra.lua);
     chadrcConfig = builtins.readFile ./chadrc.lua;
   };
 
@@ -76,6 +77,10 @@ in
       [ "$TREESITTER_DIR" "$TREESITTER_PARSER_DIR" ]
       [ "${treesitter}" "${treesitter}/parser" ]
       (builtins.readFile ./plugins/treesitter.lua);
+
+  xdg.configFile."nvim/lsp/omnisharp.lua".text =
+    builtins.replaceStrings [ "$DOTNET_SDK_PATH" ] [ "${pkgs.dotnet-sdk}" ]
+      (builtins.readFile ./lsp/omnisharp.lua);
 
   xdg.configFile."nvim/lua/plugins/unity.lua".text =
     builtins.replaceStrings [ "$UNITY_NVIM_DIR" ] [ "${pkgs.vimPlugins.nvim-unity}" ]
