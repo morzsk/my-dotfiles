@@ -45,6 +45,7 @@ in
     (modules + /opencode)
     (modules + /claude)
     (modules + /awww)
+    (modules + /mako)
     (modules + /obs)
     (modules + /gpu-screen-recorder)
   ];
