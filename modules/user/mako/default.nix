@@ -1,6 +1,8 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
+  home.packages = [ pkgs.libnotify ];
+
   services.mako = {
     enable = true;
     settings = {
@@ -9,7 +11,7 @@
       margin = "16";
       padding = "12";
       border-radius = 0;
-      border-size = 2;
+      border-size = 0;
     };
   };
 }

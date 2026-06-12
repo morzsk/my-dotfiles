@@ -1,6 +1,7 @@
 {
   "exec-once" = [
     "wallpaper-shuffle"
+    "mako"
   ];
 
   windowrule = {
