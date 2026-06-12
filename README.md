@@ -17,17 +17,25 @@ My dotfiles
 ```
 
 My Setup
-- OS -- NixOS (Flakes + Home Manager)
-- WM -- Hyprland
-- Display Manager -- Ly
-- Shell -- Zsh
-- Terminal -- Kitty
-- Editor -- NvChad (Neovim)
-- Browser -- Brave
-- File Manager -- Yazi
-- Launcher -- Rofi
-- Theme -- Gruvbox dark via Stylix
-- Font -- JetBrainsMono Nerd Font
-- Cursor -- Capitaine Cursors (Gruvbox)
-- Fetch -- fastfetch
-- Notes -- Obsidian
+```md
+          ▗▄▄▄       ▗▄▄▄▄    ▄▄▄▖             ── System ────────────────────
+          ▜███▙       ▜███▙  ▟███▛               OS             NixOS 26.11 (Zokor) + Home-Manager
+           ▜███▙       ▜███▙▟███▛                WM             Hyprland 0.55.2 (Wayland)
+            ▜███▙       ▜██████▛                 Shell          zsh 5.9.1
+     ▟█████████████████▙ ▜████▛     ▟▙           Fetch          fastfetch 2.63.1 (x86_64)
+    ▟███████████████████▙ ▜███▙    ▟██▙        ── Apps ──────────────────────
+           ▄▄▄▄▖           ▜███▙  ▟███▛          Launcher       Rofi 2.0.0
+          ▟███▛             ▜██▛ ▟███▛           Terminal       kitty 0.47.1
+         ▟███▛               ▜▛ ▟███▛            Editor         NvChad (Neovim v0.12.2)
+▟███████████▛                  ▟██████████▙      Files          Yazi 26.5.6 (Nixpkgs 2026-05-05)
+▜██████████▛                  ▟███████████▛      Browser        Brave Browser 148.1.90.128
+      ▟███▛ ▟▙               ▟███▛               Notes          Obsidian
+     ▟███▛ ▟██▙             ▟███▛              ── Themes ────────────────────
+    ▟███▛  ▜███▙           ▝▀▀▀▀                 Icons          Gruvbox-Plus-Dark
+    ▜██▛    ▜███▙ ▜██████████████████▛           Terminal Font  JetBrainsMono Nerd Font Mono
+     ▜▛     ▟████▙ ▜████████████████▛            Cursor         Capitaine Cursors (Gruvbox) (20px)
+           ▟██████▙         ▜███▙
+          ▟███▛▜███▙         ▜███▙                                     
+         ▟███▛  ▜███▙         ▜███▙                                    
+         ▝▀▀▀    ▀▀▀▀▘         ▀▀▀▘
+```
