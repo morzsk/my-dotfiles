@@ -193,6 +193,10 @@
     bind = $mod, o, submap, reset
     bind = $mod, p, exec, clip-save 600
     bind = $mod, p, submap, reset
+    bind = $mod, j, exec, clip-record-start
+    bind = $mod, j, submap, reset
+    bind = $mod, k, exec, clip-record-stop
+    bind = $mod, k, submap, reset
     bind = $mod, q, exec, systemctl --user stop gpu-screen-recorder
     bind = $mod, q, submap, reset
     bind = $mod, e, exec, systemctl --user start gpu-screen-recorder
