@@ -32,6 +32,7 @@ let
       cpp
       bash
       asm
+      python
     ]
   );
 in
@@ -51,6 +52,8 @@ in
       zls
       clang-tools
       bash-language-server
+      basedpyright
+      ruff
       stylua
       nixfmt
       prettier

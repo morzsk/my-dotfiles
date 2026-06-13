@@ -27,6 +27,7 @@ return {
       sh               = { "shfmt" },
       bash             = { "shfmt" },
       zig              = { "zigfmt" },
+      python           = { "ruff_format" },
     },
     format_on_save = {
       timeout_ms = 500,
