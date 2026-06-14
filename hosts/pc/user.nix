@@ -48,5 +48,6 @@ in
     (modules + /mako)
     (modules + /obs)
     (modules + /gpu-screen-recorder)
+    (modules + /mpv)
   ];
 }
