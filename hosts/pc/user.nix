@@ -43,6 +43,7 @@ in
     (modules + /obsidian)
     (modules + /vscode)
     (modules + /opencode)
+    (modules + /pi)
     (modules + /claude)
     (modules + /awww)
     (modules + /mako)
