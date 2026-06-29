@@ -2,6 +2,16 @@ return {
   name = "rustaceanvim",
   dir = "$RUSTACEANVIM_DIR",
   ft = "rust",
+  config = function()
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = "rust",
+      callback = function(args)
+        vim.keymap.set("n", "<leader>ca", function()
+          vim.cmd.RustLsp("codeAction")
+        end, { buffer = args.buf, desc = "Rust code actions" })
+      end,
+    })
+  end,
   init = function()
     vim.g.rustaceanvim = {
       server = {

@@ -1,6 +1,12 @@
 { pkgs, ... }:
 
 {
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    config.hyprland.default = [ "hyprland" "gtk" ];
+  };
+
   # bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

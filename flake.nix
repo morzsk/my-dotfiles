@@ -35,6 +35,8 @@
 
     swww.url = "github:LGFae/swww";
     stylix.url = "github:danth/stylix";
+
+    rokit.url = "github:morzsk/rokit-nix";
   };
 
   outputs =
