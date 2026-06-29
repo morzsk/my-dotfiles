@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   programs.java = {
@@ -7,6 +7,8 @@
   };
 
   home.packages = with pkgs; [
+    # Roblox
+    inputs.rokit.packages.${pkgs.system}.default
     # Dev
     nodejs
     rustc
