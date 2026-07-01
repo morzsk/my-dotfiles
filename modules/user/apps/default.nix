@@ -19,6 +19,7 @@
     qemu
     gcc-arm-embedded
     # GUI
+    signal-desktop
     # unityhub
     evince
     readest

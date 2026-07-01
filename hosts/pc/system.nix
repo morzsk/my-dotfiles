@@ -32,5 +32,6 @@ in
     (modules + /obs)
     (modules + /brave)
     (modules + /gpu-screen-recorder)
+    (modules + /docker)
   ];
 }
